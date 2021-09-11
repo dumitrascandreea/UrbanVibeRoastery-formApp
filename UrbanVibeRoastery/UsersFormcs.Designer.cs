@@ -80,6 +80,7 @@ namespace UrbanVibeRoastery
             this.button4.TabIndex = 20;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -91,6 +92,7 @@ namespace UrbanVibeRoastery
             this.button1.TabIndex = 19;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -145,7 +147,8 @@ namespace UrbanVibeRoastery
             this.txtPassword.Location = new System.Drawing.Point(100, 167);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(101, 19);
-            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Tag = "2";
             // 
             // brnLogin
             // 
@@ -166,7 +169,8 @@ namespace UrbanVibeRoastery
             this.txtPhone.Location = new System.Drawing.Point(100, 137);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(101, 19);
-            this.txtPhone.TabIndex = 8;
+            this.txtPhone.TabIndex = 0;
+            this.txtPhone.Tag = "2";
             // 
             // txtUserName
             // 
@@ -175,14 +179,19 @@ namespace UrbanVibeRoastery
             this.txtUserName.Location = new System.Drawing.Point(100, 108);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(101, 19);
-            this.txtUserName.TabIndex = 1;
+            this.txtUserName.TabIndex = 0;
+            this.txtUserName.Tag = "1";
             // 
             // userGrid
             // 
             this.userGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.userGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.userGrid.Location = new System.Drawing.Point(207, 36);
+            this.userGrid.MultiSelect = false;
             this.userGrid.Name = "userGrid";
+            this.userGrid.ReadOnly = true;
+            this.userGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userGrid.Size = new System.Drawing.Size(462, 424);
             this.userGrid.TabIndex = 6;
             this.userGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGrid_CellContentClick);
@@ -249,7 +258,7 @@ namespace UrbanVibeRoastery
             this.Controls.Add(this.pnBeans);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UsersFormcs";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsersFormcs";
             this.Load += new System.EventHandler(this.UsersFormcs_Load);
             this.pnBeans.ResumeLayout(false);
@@ -274,9 +283,9 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.TextBox txtUserName;
-        public System.Windows.Forms.TextBox txtPhone;
-        public System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.DataGridView userGrid;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.TextBox txtPhone;
     }
 }

@@ -14,17 +14,17 @@ namespace UrbanVibeRoastery.Business
 
     public class BusinessLogic
     {
-    
-       
+
+
         SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=UrbanVibeRoastery;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-       
+
         public BusinessLogic()
         {
 
         }
-    
-          
-       public void Populate()
+
+
+        public void Populate()
         {
             UsersFormcs uf = new UsersFormcs();
             con.Open();
@@ -37,6 +37,26 @@ namespace UrbanVibeRoastery.Business
             con.Close();
 
         }
-            
+
+        public void DeleteRow()
+        {
+            UsersFormcs uf = new UsersFormcs();
+
+            if (uf.txtPhone.Text == " ")
+            {
+                MessageBox.Show("Select a record to be deleted!");
+            }
+            else
+            {
+                con.Open();
+                string query = "delete from UserLogin where Phone = '" + uf.txtPhone.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("User successfully deleted!");
+                con.Close();
+                Populate();
+            }
+
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace UrbanVibeRoastery
             this.lbNum = new System.Windows.Forms.Label();
             this.lbClose = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.brnLogin = new System.Windows.Forms.Button();
+            this.brnAdd = new System.Windows.Forms.Button();
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.ProductsView = new System.Windows.Forms.DataGridView();
@@ -61,7 +61,7 @@ namespace UrbanVibeRoastery
             this.pnBeans.Controls.Add(this.lbNum);
             this.pnBeans.Controls.Add(this.lbClose);
             this.pnBeans.Controls.Add(this.txtPrice);
-            this.pnBeans.Controls.Add(this.brnLogin);
+            this.pnBeans.Controls.Add(this.brnAdd);
             this.pnBeans.Controls.Add(this.txtItemName);
             this.pnBeans.Controls.Add(this.txtNumber);
             this.pnBeans.Controls.Add(this.ProductsView);
@@ -82,6 +82,7 @@ namespace UrbanVibeRoastery
             this.button4.TabIndex = 20;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -93,6 +94,7 @@ namespace UrbanVibeRoastery
             this.button1.TabIndex = 19;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -147,19 +149,20 @@ namespace UrbanVibeRoastery
             this.txtPrice.Location = new System.Drawing.Point(85, 167);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(116, 19);
-            this.txtPrice.TabIndex = 14;
+            this.txtPrice.TabIndex = 4;
+            this.txtPrice.Tag = "4";
             // 
-            // brnLogin
+            // brnAdd
             // 
-            this.brnLogin.BackColor = System.Drawing.Color.PeachPuff;
-            this.brnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnLogin.Location = new System.Drawing.Point(18, 201);
-            this.brnLogin.Name = "brnLogin";
-            this.brnLogin.Size = new System.Drawing.Size(130, 34);
-            this.brnLogin.TabIndex = 10;
-            this.brnLogin.Text = "Add";
-            this.brnLogin.UseVisualStyleBackColor = false;
-            this.brnLogin.Click += new System.EventHandler(this.brnLogin_Click);
+            this.brnAdd.BackColor = System.Drawing.Color.PeachPuff;
+            this.brnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnAdd.Location = new System.Drawing.Point(18, 201);
+            this.brnAdd.Name = "brnAdd";
+            this.brnAdd.Size = new System.Drawing.Size(130, 34);
+            this.brnAdd.TabIndex = 10;
+            this.brnAdd.Text = "Add";
+            this.brnAdd.UseVisualStyleBackColor = false;
+            this.brnAdd.Click += new System.EventHandler(this.brnAdd_Click_1);
             // 
             // txtItemName
             // 
@@ -168,7 +171,8 @@ namespace UrbanVibeRoastery
             this.txtItemName.Location = new System.Drawing.Point(85, 137);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(116, 19);
-            this.txtItemName.TabIndex = 8;
+            this.txtItemName.TabIndex = 3;
+            this.txtItemName.Tag = "3";
             // 
             // txtNumber
             // 
@@ -177,15 +181,21 @@ namespace UrbanVibeRoastery
             this.txtNumber.Location = new System.Drawing.Point(85, 108);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(116, 19);
-            this.txtNumber.TabIndex = 7;
+            this.txtNumber.TabIndex = 2;
+            this.txtNumber.Tag = "2";
             // 
             // ProductsView
             // 
             this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.ProductsView.Location = new System.Drawing.Point(207, 36);
+            this.ProductsView.MultiSelect = false;
             this.ProductsView.Name = "ProductsView";
+            this.ProductsView.ReadOnly = true;
+            this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductsView.Size = new System.Drawing.Size(462, 424);
             this.ProductsView.TabIndex = 6;
+            this.ProductsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsView_CellContentClick);
             // 
             // cbCategory
             // 
@@ -199,7 +209,8 @@ namespace UrbanVibeRoastery
             this.cbCategory.Location = new System.Drawing.Point(18, 68);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(183, 26);
-            this.cbCategory.TabIndex = 5;
+            this.cbCategory.TabIndex = 0;
+            this.cbCategory.Tag = "0";
             this.cbCategory.Text = "Category";
             // 
             // lbUser
@@ -266,6 +277,7 @@ namespace UrbanVibeRoastery
             this.Name = "Products";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Products";
+            this.Load += new System.EventHandler(this.Products_Load);
             this.pnBeans.ResumeLayout(false);
             this.pnBeans.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).EndInit();
@@ -278,7 +290,7 @@ namespace UrbanVibeRoastery
 
         private System.Windows.Forms.Panel pnBeans;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Button brnLogin;
+        private System.Windows.Forms.Button brnAdd;
         private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.DataGridView ProductsView;
