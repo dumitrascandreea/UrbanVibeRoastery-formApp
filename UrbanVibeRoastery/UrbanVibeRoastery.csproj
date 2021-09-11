@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\BusinessLogic.cs" />
+    <Compile Include="DataAccessCl\DataAccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +348,9 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\uikit.js" />
     <Content Include="Scripts\uikit.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

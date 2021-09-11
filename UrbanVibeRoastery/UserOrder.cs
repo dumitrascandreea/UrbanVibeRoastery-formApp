@@ -35,5 +35,12 @@ namespace UrbanVibeRoastery
             Products product = new Products();
             product.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UsersFormcs ufm = new UsersFormcs();
+            ufm.Show();
+        }
     }
 }
