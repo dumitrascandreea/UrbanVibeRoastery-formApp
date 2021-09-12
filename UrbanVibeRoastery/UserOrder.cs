@@ -21,9 +21,20 @@ namespace UrbanVibeRoastery
         }
 
         void populate()
-        { 
+        {
             con.Open();
             string query = "select * from Product";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            SqlCommandBuilder build = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            OrderView.DataSource = ds.Tables[0];
+            con.Close();
+        }
+        void filterByCategory()
+        {
+            con.Open();
+            string query = "select * from Product where Category = '" +cbCategory.SelectedItem.ToString()+"'";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             SqlCommandBuilder build = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -59,57 +70,62 @@ namespace UrbanVibeRoastery
 
         DataTable tab = new DataTable();
         int flag = 0;
+        int sum = 0;
         private void UserOrder_Load(object sender, EventArgs e)
         {
             populate();
-            //orderjos. sus item
             tab.Columns.Add("NumberProduct", typeof(int));
             tab.Columns.Add("ProdName", typeof(string));
             tab.Columns.Add("Category", typeof(string));
             tab.Columns.Add("UnitPrice", typeof(int));
             tab.Columns.Add("TotalAmount", typeof(int));
-            OrderView.DataSource = tab;
+            cart.DataSource = tab;
         }
 
         int number = 0;
         int total, price;
         string name, category;
 
-        //private void OrderView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    txtOrder .Text = OrderView.SelectedRows[0].Cells[0].Value.ToString();
-        //    txtUser.Text = OrderView.SelectedRows[0].Cells[1].Value.ToString();
-        //    txtQty.Text = OrderView.SelectedRows[0].Cells[2].Value.ToString();
-        //}
-
-        private void brnLogin_Click(object sender, EventArgs e)
+        private void cbCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if(txtQty.Text == "")
-            {
-                MessageBox.Show("Introduce the quantity!");
-            }
-            else if( flag == 0)
-            {
-                MessageBox.Show("Select the product!");
-            }else
-            {
-                number += 1;
-                total = price * Convert.ToInt32(txtQty.Text);
-                tab.Rows.Add(number, ProdName, category,price, total);
-                OrderView.DataSource = tab;
-                flag = 0;
-            }
+            filterByCategory(); 
         }
 
-       
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            populate();
+        }
+
+        private void OrderView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             name = OrderView.SelectedRows[0].Cells[2].Value.ToString();
             category = OrderView.SelectedRows[0].Cells[0].Value.ToString();
-            price = Convert.ToInt32(OrderView.SelectedRows[4].Cells[3].Value.ToString());
+            price = Convert.ToInt32(OrderView.SelectedRows[0].Cells[3].Value.ToString());
             flag = 1;
-           
-        
+            
         }
+        private void brnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtQty.Text == "")
+            {
+                MessageBox.Show("Introduce the quantity!");
+            }
+            else if (flag == 0)
+            {
+                MessageBox.Show("Select the product!");
+            }
+            else
+            {
+                number= number + 1;
+                total = price * Convert.ToInt32(txtQty.Text);
+                tab.Rows.Add(number, name, category, price, total);
+                cart.DataSource = tab;
+                flag = 0;
+            }
+            sum = sum + total;
+            lblTotal.Text = "Euro " + sum;
+        }
+
+
     }
 }
