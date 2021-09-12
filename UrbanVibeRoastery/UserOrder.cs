@@ -80,6 +80,8 @@ namespace UrbanVibeRoastery
             tab.Columns.Add("UnitPrice", typeof(int));
             tab.Columns.Add("TotalAmount", typeof(int));
             cart.DataSource = tab;
+            txtUser.Text = Form1.user; 
+
         }
 
         int number = 0;
@@ -94,6 +96,34 @@ namespace UrbanVibeRoastery
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "insert into dbo.Orders  values ('" + txtOrder.Text + "','" + txtUser.Text + "','" + txtQty.Text + "','" + lbTotal.Text + "') ";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Order succesfuly made");
+            con.Close();
+        }
+
+        private void txtOrder_Click(object sender, EventArgs e)
+        {
+            txtOrder.Text = "";
+        }
+
+        private void txtQty_Click(object sender, EventArgs e)
+        {
+            txtQty.Text = "";
+        }
+
+        private void bbtnView_Click(object sender, EventArgs e)
+        {
+            ViewOrder view = new ViewOrder();
+            view.Show();
         }
 
         private void OrderView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,7 +153,7 @@ namespace UrbanVibeRoastery
                 flag = 0;
             }
             sum = sum + total;
-            lblTotal.Text = "Euro " + sum;
+            lbTotal.Text = "" + sum;
         }
 
 

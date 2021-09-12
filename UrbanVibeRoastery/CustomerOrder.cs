@@ -81,6 +81,7 @@ namespace UrbanVibeRoastery
                 flag = 0;
             }
             sum = sum + total;
+            lbTotal.Text = "" + sum;
         }
 
         private void ProductsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -89,6 +90,29 @@ namespace UrbanVibeRoastery
             category = ProductsView.SelectedRows[0].Cells[0].Value.ToString();
             price = Convert.ToInt32(ProductsView.SelectedRows[0].Cells[3].Value.ToString());
             flag = 1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "insert into dbo.Orders  values ('" + txtOrderNumber .Text + "','" + txtGuest.Text + "','" + txtQty.Text + "','"+lbTotal.Text +   "') ";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Order succesfuly made");
+            con.Close();
+            
+        }
+
+        private void txtOrderNumber_Click(object sender, EventArgs e)
+        {
+            txtOrderNumber.Text = "";
+        }
+
+        private void txtQty_Click(object sender, EventArgs e)
+        {
+            txtQty.Text = "";
         }
 
         private void CustomerOrder_Load(object sender, EventArgs e)

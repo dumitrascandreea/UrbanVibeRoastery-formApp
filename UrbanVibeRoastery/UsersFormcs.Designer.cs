@@ -147,7 +147,7 @@ namespace UrbanVibeRoastery
             this.txtPassword.Location = new System.Drawing.Point(100, 167);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(101, 19);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.Tag = "2";
             // 
             // brnLogin
@@ -169,7 +169,7 @@ namespace UrbanVibeRoastery
             this.txtPhone.Location = new System.Drawing.Point(100, 137);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(101, 19);
-            this.txtPhone.TabIndex = 0;
+            this.txtPhone.TabIndex = 2;
             this.txtPhone.Tag = "2";
             // 
             // txtUserName
@@ -179,7 +179,7 @@ namespace UrbanVibeRoastery
             this.txtUserName.Location = new System.Drawing.Point(100, 108);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(101, 19);
-            this.txtUserName.TabIndex = 0;
+            this.txtUserName.TabIndex = 1;
             this.txtUserName.Tag = "1";
             // 
             // userGrid
