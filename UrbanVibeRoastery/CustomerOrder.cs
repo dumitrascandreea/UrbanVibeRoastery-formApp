@@ -115,6 +115,7 @@ namespace UrbanVibeRoastery
             price = Convert.ToInt32(ProductsView.SelectedRows[0].Cells[3].Value.ToString());
         }
 
+
         private void CustomerOrder_Load(object sender, EventArgs e)
         {
             populate();

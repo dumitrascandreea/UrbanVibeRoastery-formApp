@@ -75,7 +75,7 @@ namespace UrbanVibeRoastery
             this.lbEuro.AutoSize = true;
             this.lbEuro.BackColor = System.Drawing.Color.Transparent;
             this.lbEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEuro.Location = new System.Drawing.Point(404, 468);
+            this.lbEuro.Location = new System.Drawing.Point(492, 465);
             this.lbEuro.Name = "lbEuro";
             this.lbEuro.Size = new System.Drawing.Size(64, 29);
             this.lbEuro.TabIndex = 15;
@@ -140,7 +140,7 @@ namespace UrbanVibeRoastery
             this.lbTotal.AutoSize = true;
             this.lbTotal.BackColor = System.Drawing.Color.Transparent;
             this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(474, 468);
+            this.lbTotal.Location = new System.Drawing.Point(551, 465);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(68, 29);
             this.lbTotal.TabIndex = 9;
