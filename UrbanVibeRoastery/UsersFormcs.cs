@@ -75,16 +75,7 @@ namespace UrbanVibeRoastery
         private void lbClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void userGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtUserName.Text = userGrid.SelectedRows[0].Cells[0].Value.ToString();
-            txtPhone.Text =    userGrid.SelectedRows[0].Cells[1].Value.ToString();
-            txtPassword.Text = userGrid.SelectedRows[0].Cells[2].Value.ToString();
-        }
-
-      
+        }     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -121,6 +112,13 @@ namespace UrbanVibeRoastery
                 populate();
 
             }
+        }
+
+        private void userGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtUserName.Text = userGrid.SelectedRows[0].Cells[0].Value.ToString();
+            txtPhone.Text = userGrid.SelectedRows[0].Cells[1].Value.ToString();
+            txtPassword.Text = userGrid.SelectedRows[0].Cells[2].Value.ToString();
         }
     }
     }

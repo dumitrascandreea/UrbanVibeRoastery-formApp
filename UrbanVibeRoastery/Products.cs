@@ -45,7 +45,9 @@ namespace UrbanVibeRoastery
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            UsersFormcs us = new UsersFormcs();
+            us.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -63,9 +65,9 @@ namespace UrbanVibeRoastery
         private void ProductsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // cbCategory.SelectedItem = ProductsView.SelectedRows[0].Cells[0].Value.ToString();
-            txtNumber.Text = ProductsView.SelectedRows[0].Cells[1].Value.ToString();
-            txtItemName.Text = ProductsView.SelectedRows[0].Cells[2].Value.ToString();
-            txtPrice.Text = ProductsView.SelectedRows[0].Cells[3].Value.ToString();
+           // txtNumber.Text = ProductsView.SelectedRows[0].Cells[1].Value.ToString();
+            //txtItemName.Text = ProductsView.SelectedRows[0].Cells[2].Value.ToString();
+           // txtPrice.Text = ProductsView.SelectedRows[0].Cells[3].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,18 +91,21 @@ namespace UrbanVibeRoastery
 
         private void brnAdd_Click_1(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "" || txtItemName.Text == "" || txtPrice.Text == "")
+            if (txtNumber.Text == "" || txtItemName.Text == "" || txtPrice.Text == ""||cbCategory.Text== "Category")
             {
                 MessageBox.Show("Fill all the fileds!");
             }
             con.Open();
-            string query = "Insert into dbo.Product (Category, Number, ProductName, Price) values ('" + cbCategory.SelectedItem.ToString() + "','" + txtNumber.Text + "','" + txtItemName.Text + "','" + double.Parse(txtPrice.Text) + "')";
+            string query = "Insert into dbo.Product (Category, Number, ProductName, Price) values ('" + cbCategory.SelectedItem.ToString() + "','" + txtNumber.Text + "','" + txtItemName.Text + "','" + (txtPrice.Text) + "')";
         
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Added successful!");
             con.Close();
             populate();
+            txtNumber.Text = "";
+            txtItemName.Text = "";
+            txtPrice.Text = "";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -112,13 +117,23 @@ namespace UrbanVibeRoastery
             else
             {
                 con.Open();
-                string query = "Update Product set ProductName = '" + txtItemName.Text + "' , Price = '" + txtPrice.Text + "',Category ='" + cbCategory.SelectedItem.ToString()+ "'where Number =  '" + txtNumber.Text + "'";
+                string query = "Update Product set ProductName = '" + txtItemName.Text + "' , Price = '" + txtPrice.Text + "',Category = '" + cbCategory.SelectedItem.ToString() +
+                    "'where Number =  '" + txtNumber.Text + "'";
+                
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("successfull updated!");
                 con.Close();
                 populate();
             }
+        }
+
+        private void ProductsView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNumber.Text = ProductsView.SelectedRows[0].Cells[1].Value.ToString();
+            txtItemName.Text = ProductsView.SelectedRows[0].Cells[2].Value.ToString();
+            txtPrice.Text = ProductsView.SelectedRows[0].Cells[3].Value.ToString();
+            cbCategory.Text = ProductsView.SelectedRows[0].Cells[0].Value.ToString();
         }
     }
 }

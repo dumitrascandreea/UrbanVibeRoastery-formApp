@@ -39,12 +39,12 @@ namespace UrbanVibeRoastery
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.brnLogin = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.userGrid = new System.Windows.Forms.DataGridView();
             this.lbUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.pnBeans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGrid)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,7 @@ namespace UrbanVibeRoastery
             // 
             this.pnBeans.BackgroundImage = global::UrbanVibeRoastery.Properties.Resources.beans;
             this.pnBeans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBeans.Controls.Add(this.txtUserName);
             this.pnBeans.Controls.Add(this.button4);
             this.pnBeans.Controls.Add(this.button1);
             this.pnBeans.Controls.Add(this.label4);
@@ -62,7 +63,6 @@ namespace UrbanVibeRoastery
             this.pnBeans.Controls.Add(this.txtPassword);
             this.pnBeans.Controls.Add(this.brnLogin);
             this.pnBeans.Controls.Add(this.txtPhone);
-            this.pnBeans.Controls.Add(this.txtUserName);
             this.pnBeans.Controls.Add(this.userGrid);
             this.pnBeans.Controls.Add(this.lbUser);
             this.pnBeans.Location = new System.Drawing.Point(160, 3);
@@ -74,7 +74,7 @@ namespace UrbanVibeRoastery
             // 
             this.button4.BackColor = System.Drawing.Color.PeachPuff;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(18, 281);
+            this.button4.Location = new System.Drawing.Point(35, 281);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 34);
             this.button4.TabIndex = 20;
@@ -86,7 +86,7 @@ namespace UrbanVibeRoastery
             // 
             this.button1.BackColor = System.Drawing.Color.PeachPuff;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(18, 241);
+            this.button1.Location = new System.Drawing.Point(35, 241);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 34);
             this.button1.TabIndex = 19;
@@ -147,14 +147,14 @@ namespace UrbanVibeRoastery
             this.txtPassword.Location = new System.Drawing.Point(100, 167);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(101, 19);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.Tag = "2";
             // 
             // brnLogin
             // 
             this.brnLogin.BackColor = System.Drawing.Color.PeachPuff;
             this.brnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnLogin.Location = new System.Drawing.Point(18, 201);
+            this.brnLogin.Location = new System.Drawing.Point(35, 201);
             this.brnLogin.Name = "brnLogin";
             this.brnLogin.Size = new System.Drawing.Size(130, 34);
             this.brnLogin.TabIndex = 10;
@@ -169,39 +169,31 @@ namespace UrbanVibeRoastery
             this.txtPhone.Location = new System.Drawing.Point(100, 137);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(101, 19);
-            this.txtPhone.TabIndex = 0;
+            this.txtPhone.TabIndex = 2;
             this.txtPhone.Tag = "2";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(100, 108);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(101, 19);
-            this.txtUserName.TabIndex = 0;
-            this.txtUserName.Tag = "1";
             // 
             // userGrid
             // 
-            this.userGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.userGrid.BackgroundColor = System.Drawing.Color.White;
             this.userGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.userGrid.Location = new System.Drawing.Point(207, 36);
+            this.userGrid.Location = new System.Drawing.Point(208, 108);
             this.userGrid.MultiSelect = false;
             this.userGrid.Name = "userGrid";
             this.userGrid.ReadOnly = true;
+            this.userGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.userGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.userGrid.Size = new System.Drawing.Size(462, 424);
+            this.userGrid.Size = new System.Drawing.Size(462, 159);
             this.userGrid.TabIndex = 6;
-            this.userGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGrid_CellContentClick);
+            this.userGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGrid_CellClick);
+           
             // 
             // lbUser
             // 
             this.lbUser.AutoSize = true;
             this.lbUser.BackColor = System.Drawing.Color.Transparent;
             this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.Location = new System.Drawing.Point(337, 4);
+            this.lbUser.Location = new System.Drawing.Point(265, 36);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(165, 29);
             this.lbUser.TabIndex = 4;
@@ -245,6 +237,16 @@ namespace UrbanVibeRoastery
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtUserName
+            // 
+            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(101, 108);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(101, 19);
+            this.txtUserName.TabIndex = 1;
+            this.txtUserName.Tag = "1";
+            // 
             // UsersFormcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,8 +286,8 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView userGrid;
-        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.TextBox txtPhone;
+        public System.Windows.Forms.TextBox txtUserName;
     }
 }

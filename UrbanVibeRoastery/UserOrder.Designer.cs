@@ -30,13 +30,17 @@ namespace UrbanVibeRoastery
         private void InitializeComponent()
         {
             this.pnBeans = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bbtnView = new System.Windows.Forms.Button();
+            this.lbEuro = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.lbClose = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cart = new System.Windows.Forms.DataGridView();
             this.brnAdd = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtOrder = new System.Windows.Forms.TextBox();
             this.OrderView = new System.Windows.Forms.DataGridView();
@@ -45,7 +49,6 @@ namespace UrbanVibeRoastery
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.pnBeans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderView)).BeginInit();
@@ -55,6 +58,10 @@ namespace UrbanVibeRoastery
             // 
             this.pnBeans.BackgroundImage = global::UrbanVibeRoastery.Properties.Resources.beans;
             this.pnBeans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBeans.Controls.Add(this.label1);
+            this.pnBeans.Controls.Add(this.bbtnView);
+            this.pnBeans.Controls.Add(this.lbEuro);
+            this.pnBeans.Controls.Add(this.lbTotal);
             this.pnBeans.Controls.Add(this.btnRefresh);
             this.pnBeans.Controls.Add(this.lbClose);
             this.pnBeans.Controls.Add(this.txtQty);
@@ -62,7 +69,6 @@ namespace UrbanVibeRoastery
             this.pnBeans.Controls.Add(this.button1);
             this.pnBeans.Controls.Add(this.cart);
             this.pnBeans.Controls.Add(this.brnAdd);
-            this.pnBeans.Controls.Add(this.lblTotal);
             this.pnBeans.Controls.Add(this.txtUser);
             this.pnBeans.Controls.Add(this.txtOrder);
             this.pnBeans.Controls.Add(this.OrderView);
@@ -72,6 +78,61 @@ namespace UrbanVibeRoastery
             this.pnBeans.Name = "pnBeans";
             this.pnBeans.Size = new System.Drawing.Size(698, 502);
             this.pnBeans.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Filter by";
+            // 
+            // bbtnView
+            // 
+            this.bbtnView.BackColor = System.Drawing.Color.PeachPuff;
+            this.bbtnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnView.Location = new System.Drawing.Point(383, 465);
+            this.bbtnView.Name = "bbtnView";
+            this.bbtnView.Size = new System.Drawing.Size(170, 34);
+            this.bbtnView.TabIndex = 19;
+            this.bbtnView.Text = "View Order";
+            this.bbtnView.UseVisualStyleBackColor = false;
+            this.bbtnView.Click += new System.EventHandler(this.bbtnView_Click);
+            // 
+            // lbEuro
+            // 
+            this.lbEuro.AutoSize = true;
+            this.lbEuro.BackColor = System.Drawing.Color.Transparent;
+            this.lbEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEuro.Location = new System.Drawing.Point(559, 468);
+            this.lbEuro.Name = "lbEuro";
+            this.lbEuro.Size = new System.Drawing.Size(64, 29);
+            this.lbEuro.TabIndex = 18;
+            this.lbEuro.Text = "Euro";
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(618, 468);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(68, 29);
+            this.lbTotal.TabIndex = 17;
+            this.lbTotal.Text = "Total";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(113, 92);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 34);
+            this.btnRefresh.TabIndex = 16;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // lbClose
             // 
@@ -89,18 +150,19 @@ namespace UrbanVibeRoastery
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(207, 260);
+            this.txtQty.Location = new System.Drawing.Point(18, 274);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(170, 26);
             this.txtQty.TabIndex = 14;
             this.txtQty.Text = "Quantity";
+            this.txtQty.Click += new System.EventHandler(this.txtQty_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(337, 280);
+            this.label3.Location = new System.Drawing.Point(403, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 29);
             this.label3.TabIndex = 13;
@@ -116,11 +178,13 @@ namespace UrbanVibeRoastery
             this.button1.TabIndex = 12;
             this.button1.Text = "Order";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cart
             // 
+            this.cart.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cart.Location = new System.Drawing.Point(207, 312);
+            this.cart.Location = new System.Drawing.Point(194, 242);
             this.cart.MultiSelect = false;
             this.cart.Name = "cart";
             this.cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -131,7 +195,7 @@ namespace UrbanVibeRoastery
             // 
             this.brnAdd.BackColor = System.Drawing.Color.PeachPuff;
             this.brnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnAdd.Location = new System.Drawing.Point(18, 257);
+            this.brnAdd.Location = new System.Drawing.Point(18, 202);
             this.brnAdd.Name = "brnAdd";
             this.brnAdd.Size = new System.Drawing.Size(170, 34);
             this.brnAdd.TabIndex = 10;
@@ -139,22 +203,11 @@ namespace UrbanVibeRoastery
             this.brnAdd.UseVisualStyleBackColor = false;
             this.brnAdd.Click += new System.EventHandler(this.brnAdd_Click);
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(551, 465);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(68, 29);
-            this.lblTotal.TabIndex = 9;
-            this.lblTotal.Text = "Total";
-            // 
             // txtUser
             // 
             this.txtUser.Enabled = false;
             this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(18, 100);
+            this.txtUser.Location = new System.Drawing.Point(18, 65);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(170, 26);
             this.txtUser.TabIndex = 8;
@@ -163,26 +216,28 @@ namespace UrbanVibeRoastery
             // txtOrder
             // 
             this.txtOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrder.Location = new System.Drawing.Point(18, 68);
+            this.txtOrder.Location = new System.Drawing.Point(18, 242);
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(170, 26);
             this.txtOrder.TabIndex = 7;
             this.txtOrder.Text = "OrderNumber";
+            this.txtOrder.Click += new System.EventHandler(this.txtOrder_Click);
             // 
             // OrderView
             // 
+            this.OrderView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.OrderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrderView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.OrderView.Location = new System.Drawing.Point(207, 36);
+            this.OrderView.Location = new System.Drawing.Point(193, 34);
             this.OrderView.MultiSelect = false;
             this.OrderView.Name = "OrderView";
             this.OrderView.ReadOnly = true;
-            this.OrderView.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.OrderView.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.OrderView.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.OrderView.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.OrderView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.OrderView.Size = new System.Drawing.Size(491, 163);
+            this.OrderView.Size = new System.Drawing.Size(491, 120);
             this.OrderView.TabIndex = 0;
-            this.OrderView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrderView_CellContentClick);
+            this.OrderView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrderView_CellClick);
             // 
             // cbCategory
             // 
@@ -205,7 +260,7 @@ namespace UrbanVibeRoastery
             this.lbUser.AutoSize = true;
             this.lbUser.BackColor = System.Drawing.Color.Transparent;
             this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.Location = new System.Drawing.Point(239, 4);
+            this.lbUser.Location = new System.Drawing.Point(383, 4);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(170, 29);
             this.lbUser.TabIndex = 4;
@@ -249,18 +304,6 @@ namespace UrbanVibeRoastery
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.PeachPuff;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(113, 132);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 34);
-            this.btnRefresh.TabIndex = 16;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // UserOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +336,6 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button brnAdd;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtOrder;
         private System.Windows.Forms.DataGridView OrderView;
@@ -305,5 +347,9 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.DataGridView cart;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lbEuro;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Button bbtnView;
+        private System.Windows.Forms.Label label1;
     }
 }

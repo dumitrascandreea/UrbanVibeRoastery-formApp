@@ -69,7 +69,6 @@ namespace UrbanVibeRoastery
         }
 
         DataTable tab = new DataTable();
-        int flag = 0;
         int sum = 0;
         private void UserOrder_Load(object sender, EventArgs e)
         {
@@ -80,6 +79,8 @@ namespace UrbanVibeRoastery
             tab.Columns.Add("UnitPrice", typeof(int));
             tab.Columns.Add("TotalAmount", typeof(int));
             cart.DataSource = tab;
+            txtUser.Text = Form1.user; 
+
         }
 
         int number = 0;
@@ -96,21 +97,52 @@ namespace UrbanVibeRoastery
             populate();
         }
 
-        private void OrderView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            string query = "insert into dbo.Orders  values ('" + txtOrder.Text + "','" + txtUser.Text + "','" + txtQty.Text + "','" + lbTotal.Text +"','"+cbCategory.SelectedItem.ToString()+ "') ";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Order succesfuly made");
+            con.Close();
+        }
+
+       
+
+        private void bbtnView_Click(object sender, EventArgs e)
+        {
+            ViewOrder view = new ViewOrder();
+            view.Show();
+        }
+
+        private void txtOrder_Click(object sender, EventArgs e)
+        {
+            txtOrder.Text = "";
+        }
+
+        private void txtQty_Click(object sender, EventArgs e)
+        {
+            txtQty.Text = "";
+        }
+
+        private void OrderView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             name = OrderView.SelectedRows[0].Cells[2].Value.ToString();
             category = OrderView.SelectedRows[0].Cells[0].Value.ToString();
             price = Convert.ToInt32(OrderView.SelectedRows[0].Cells[3].Value.ToString());
-            flag = 1;
-            
-        }
+          }
+
+       
         private void brnAdd_Click(object sender, EventArgs e)
         {
             if (txtQty.Text == "")
             {
                 MessageBox.Show("Introduce the quantity!");
             }
-            else if (flag == 0)
+            else if (name == "0" || name == null)
             {
                 MessageBox.Show("Select the product!");
             }
@@ -120,10 +152,11 @@ namespace UrbanVibeRoastery
                 total = price * Convert.ToInt32(txtQty.Text);
                 tab.Rows.Add(number, name, category, price, total);
                 cart.DataSource = tab;
-                flag = 0;
             }
             sum = sum + total;
-            lblTotal.Text = "Euro " + sum;
+            lbTotal.Text = "" + sum;
+            
+
         }
 
 

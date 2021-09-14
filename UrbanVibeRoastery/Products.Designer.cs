@@ -30,6 +30,7 @@ namespace UrbanVibeRoastery
         private void InitializeComponent()
         {
             this.pnBeans = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@ namespace UrbanVibeRoastery
             // 
             this.pnBeans.BackgroundImage = global::UrbanVibeRoastery.Properties.Resources.beans;
             this.pnBeans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBeans.Controls.Add(this.label3);
             this.pnBeans.Controls.Add(this.button4);
             this.pnBeans.Controls.Add(this.button1);
             this.pnBeans.Controls.Add(this.label4);
@@ -72,11 +74,22 @@ namespace UrbanVibeRoastery
             this.pnBeans.Size = new System.Drawing.Size(670, 502);
             this.pnBeans.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Category";
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.PeachPuff;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(18, 281);
+            this.button4.Location = new System.Drawing.Point(18, 298);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 34);
             this.button4.TabIndex = 20;
@@ -88,7 +101,7 @@ namespace UrbanVibeRoastery
             // 
             this.button1.BackColor = System.Drawing.Color.PeachPuff;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(18, 241);
+            this.button1.Location = new System.Drawing.Point(18, 258);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 34);
             this.button1.TabIndex = 19;
@@ -101,7 +114,7 @@ namespace UrbanVibeRoastery
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 166);
+            this.label4.Location = new System.Drawing.Point(14, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 18;
@@ -112,7 +125,7 @@ namespace UrbanVibeRoastery
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 137);
+            this.label2.Location = new System.Drawing.Point(14, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 17;
@@ -123,7 +136,7 @@ namespace UrbanVibeRoastery
             this.lbNum.AutoSize = true;
             this.lbNum.BackColor = System.Drawing.Color.Transparent;
             this.lbNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNum.Location = new System.Drawing.Point(14, 108);
+            this.lbNum.Location = new System.Drawing.Point(14, 140);
             this.lbNum.Name = "lbNum";
             this.lbNum.Size = new System.Drawing.Size(65, 20);
             this.lbNum.TabIndex = 16;
@@ -146,7 +159,7 @@ namespace UrbanVibeRoastery
             // 
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(85, 167);
+            this.txtPrice.Location = new System.Drawing.Point(85, 193);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(116, 19);
             this.txtPrice.TabIndex = 4;
@@ -156,7 +169,7 @@ namespace UrbanVibeRoastery
             // 
             this.brnAdd.BackColor = System.Drawing.Color.PeachPuff;
             this.brnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnAdd.Location = new System.Drawing.Point(18, 201);
+            this.brnAdd.Location = new System.Drawing.Point(18, 218);
             this.brnAdd.Name = "brnAdd";
             this.brnAdd.Size = new System.Drawing.Size(130, 34);
             this.brnAdd.TabIndex = 10;
@@ -168,7 +181,7 @@ namespace UrbanVibeRoastery
             // 
             this.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(85, 137);
+            this.txtItemName.Location = new System.Drawing.Point(85, 168);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(116, 19);
             this.txtItemName.TabIndex = 3;
@@ -178,7 +191,7 @@ namespace UrbanVibeRoastery
             // 
             this.txtNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumber.Location = new System.Drawing.Point(85, 108);
+            this.txtNumber.Location = new System.Drawing.Point(85, 141);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(116, 19);
             this.txtNumber.TabIndex = 2;
@@ -186,15 +199,17 @@ namespace UrbanVibeRoastery
             // 
             // ProductsView
             // 
+            this.ProductsView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.ProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.ProductsView.Location = new System.Drawing.Point(207, 36);
+            this.ProductsView.Location = new System.Drawing.Point(208, 105);
             this.ProductsView.MultiSelect = false;
             this.ProductsView.Name = "ProductsView";
             this.ProductsView.ReadOnly = true;
             this.ProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductsView.Size = new System.Drawing.Size(462, 424);
+            this.ProductsView.Size = new System.Drawing.Size(462, 107);
             this.ProductsView.TabIndex = 6;
+            this.ProductsView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsView_CellClick);
             this.ProductsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsView_CellContentClick);
             // 
             // cbCategory
@@ -206,12 +221,11 @@ namespace UrbanVibeRoastery
             "Tea",
             "Beverages",
             "Cakes"});
-            this.cbCategory.Location = new System.Drawing.Point(18, 68);
+            this.cbCategory.Location = new System.Drawing.Point(85, 108);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(183, 26);
+            this.cbCategory.Size = new System.Drawing.Size(116, 26);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.Tag = "0";
-            this.cbCategory.Text = "Category";
             // 
             // lbUser
             // 
@@ -305,5 +319,6 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
