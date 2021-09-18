@@ -30,6 +30,7 @@ namespace UrbanVibeRoastery
         private void InitializeComponent()
         {
             this.pnBeans = new System.Windows.Forms.Panel();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,7 +45,7 @@ namespace UrbanVibeRoastery
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.pnBeans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGrid)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +70,16 @@ namespace UrbanVibeRoastery
             this.pnBeans.Name = "pnBeans";
             this.pnBeans.Size = new System.Drawing.Size(670, 507);
             this.pnBeans.TabIndex = 2;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(101, 108);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(101, 19);
+            this.txtUserName.TabIndex = 1;
+            this.txtUserName.Tag = "1";
             // 
             // button4
             // 
@@ -186,7 +197,6 @@ namespace UrbanVibeRoastery
             this.userGrid.Size = new System.Drawing.Size(462, 159);
             this.userGrid.TabIndex = 6;
             this.userGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGrid_CellClick);
-           
             // 
             // lbUser
             // 
@@ -237,15 +247,17 @@ namespace UrbanVibeRoastery
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtUserName
+            // button5
             // 
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(101, 108);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(101, 19);
-            this.txtUserName.TabIndex = 1;
-            this.txtUserName.Tag = "1";
+            this.button5.BackColor = System.Drawing.Color.PeachPuff;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(32, 151);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(110, 49);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Speciality coffee";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // UsersFormcs
             // 
@@ -254,6 +266,7 @@ namespace UrbanVibeRoastery
             this.BackgroundImage = global::UrbanVibeRoastery.Properties.Resources.afrah_Qwiwjf3oZ1U_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(830, 508);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -289,5 +302,6 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.TextBox txtPhone;
         public System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Button button5;
     }
 }

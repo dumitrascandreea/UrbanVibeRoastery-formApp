@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\BusinessLogic.cs" />
+    <Compile Include="CoffeeSepciality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoffeeSepciality.Designer.cs">
+      <DependentUpon>CoffeeSepciality.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessCl\DataAccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -86,6 +92,9 @@
     <Compile Include="ViewOrder.Designer.cs">
       <DependentUpon>ViewOrder.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CoffeeSepciality.resx">
+      <DependentUpon>CoffeeSepciality.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +283,15 @@
     <None Include="Resources\logo1.png" />
     <None Include="Resources\black_logo_transparent_background.png" />
     <None Include="Resources\roaster-1.jpg" />
+    <None Include="Resources\IMG_4986.JPG" />
+    <None Include="Resources\SanDomingo.JPG" />
+    <None Include="Resources\Brazilia.JPG" />
+    <None Include="Resources\costaRica.JPG" />
+    <None Include="Resources\ElSalvador.JPG" />
+    <None Include="Resources\Ethiopia.JPG" />
+    <None Include="Resources\gualtemaa.JPG" />
+    <None Include="Resources\Panama.JPG" />
+    <None Include="Resources\Rwanda.JPG" />
     <Content Include="Scripts\components\accordion.js" />
     <Content Include="Scripts\components\accordion.min.js" />
     <Content Include="Scripts\components\autocomplete.js" />
