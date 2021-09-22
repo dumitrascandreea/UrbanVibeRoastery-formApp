@@ -121,12 +121,7 @@ namespace UrbanVibeRoastery
             txtPassword.Text = userGrid.SelectedRows[0].Cells[2].Value.ToString();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CoffeeSepciality cf = new CoffeeSepciality();
-            cf.Show();
-        }
+     
     }
     }
 

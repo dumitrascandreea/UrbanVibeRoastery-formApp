@@ -43,6 +43,9 @@ namespace UrbanVibeRoastery
             }
         }
 
-      
+        private void lbClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

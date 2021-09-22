@@ -210,7 +210,7 @@ namespace UrbanVibeRoastery
             this.ProductsView.Size = new System.Drawing.Size(462, 107);
             this.ProductsView.TabIndex = 6;
             this.ProductsView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsView_CellClick);
-            this.ProductsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsView_CellContentClick);
+           
             // 
             // cbCategory
             // 

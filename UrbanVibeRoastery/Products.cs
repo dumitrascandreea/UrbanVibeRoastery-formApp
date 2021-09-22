@@ -62,13 +62,7 @@ namespace UrbanVibeRoastery
             populate();
         }
 
-        private void ProductsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // cbCategory.SelectedItem = ProductsView.SelectedRows[0].Cells[0].Value.ToString();
-           // txtNumber.Text = ProductsView.SelectedRows[0].Cells[1].Value.ToString();
-            //txtItemName.Text = ProductsView.SelectedRows[0].Cells[2].Value.ToString();
-           // txtPrice.Text = ProductsView.SelectedRows[0].Cells[3].Value.ToString();
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -80,7 +74,7 @@ namespace UrbanVibeRoastery
             else
             {
                 con.Open();
-                string query = "delete from Product where ProductName = '" + txtItemName.Text + "'";
+                string query = "delete from Product where ProductName = '" + txtItemName.Text + "'and Number= '" +txtNumber.Text+  "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Product successfully deleted!");
@@ -96,7 +90,8 @@ namespace UrbanVibeRoastery
                 MessageBox.Show("Fill all the fileds!");
             }
             con.Open();
-            string query = "Insert into dbo.Product (Category, Number, ProductName, Price) values ('" + cbCategory.SelectedItem.ToString() + "','" + txtNumber.Text + "','" + txtItemName.Text + "','" + (txtPrice.Text) + "')";
+            decimal price = Convert.ToDecimal(txtPrice.Text);
+            string query = "Insert into dbo.Product (Category, Number, ProductName, Price) values ('" + cbCategory.SelectedItem.ToString() + "','" + txtNumber.Text + "','" + txtItemName.Text + "','" + price + "')";
         
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();

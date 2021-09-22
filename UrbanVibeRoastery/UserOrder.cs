@@ -128,6 +128,33 @@ namespace UrbanVibeRoastery
             txtQty.Text = "";
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {            
+                this.Hide();
+                CoffeeSepciality cf = new CoffeeSepciality();
+                cf.Show();
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string query = "select * from Product where ProductName like '" +ProdName.Text + "%'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            SqlCommandBuilder build = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            OrderView.DataSource = ds.Tables[0];
+            con.Close();
+            ProdName.Text = "";
+        }
+
+        private void ProdName_Click(object sender, EventArgs e)
+        {
+            ProdName.Text = "";
+        }
+
         private void OrderView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             name = OrderView.SelectedRows[0].Cells[2].Value.ToString();
