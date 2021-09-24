@@ -69,7 +69,7 @@ namespace UrbanVibeRoastery
         }
 
         DataTable tab = new DataTable();
-        int sum = 0;
+        decimal sum = 0;
         private void UserOrder_Load(object sender, EventArgs e)
         {
             populate();
@@ -84,7 +84,7 @@ namespace UrbanVibeRoastery
         }
 
         int number = 0;
-        int total, price;
+        decimal total, price;
         string name, category;
 
         private void cbCategory_SelectionChangeCommitted(object sender, EventArgs e)
@@ -99,15 +99,24 @@ namespace UrbanVibeRoastery
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
+            if (txtOrder.Text == "OrderNumber" || txtQty.Text == "Quantity" ||cbCategory.Text== "Category")
+            {
+                Console.WriteLine("Enter the quantity and the order number");
+            }
+            else
+            {
+                con.Open();
+                decimal price1 = Convert.ToDecimal(lbTotal.Text);
+                string query = "insert into Orders  values ('" + txtOrder.Text + "','" + txtUser.Text + "','" + txtQty.Text + "','" + price1 + "','" + cbCategory.SelectedItem.ToString() + "') ";
 
-            string query = "insert into dbo.Orders  values ('" + txtOrder.Text + "','" + txtUser.Text + "','" + txtQty.Text + "','" + lbTotal.Text +"','"+cbCategory.SelectedItem.ToString()+ "') ";
-
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Connection = con;
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Order succesfuly made");
-            con.Close();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Connection = con;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Order succesfuly made");
+                con.Close();
+                txtQty.Text = "";
+                txtOrder.Text = "";
+            }
         }
 
        
@@ -159,15 +168,15 @@ namespace UrbanVibeRoastery
         {
             name = OrderView.SelectedRows[0].Cells[2].Value.ToString();
             category = OrderView.SelectedRows[0].Cells[0].Value.ToString();
-            price = Convert.ToInt32(OrderView.SelectedRows[0].Cells[3].Value.ToString());
+            price = Convert.ToDecimal(OrderView.SelectedRows[0].Cells[3].Value.ToString());
           }
 
        
         private void brnAdd_Click(object sender, EventArgs e)
         {
-            if (txtQty.Text == "")
+            if (txtQty.Text == "Quantity" || txtOrder.Text == "OrderNumber" ||cbCategory.Text=="Category")
             {
-                MessageBox.Show("Introduce the quantity!");
+                MessageBox.Show("Introduce the quantity and the order number!");
             }
             else if (name == "0" || name == null)
             {

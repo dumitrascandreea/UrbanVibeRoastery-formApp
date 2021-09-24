@@ -44,6 +44,7 @@ namespace UrbanVibeRoastery
             this.lbUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbClose = new System.Windows.Forms.Label();
+            this.Oderr = new System.Windows.Forms.Label();
             this.pnBeans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsView)).BeginInit();
@@ -53,6 +54,7 @@ namespace UrbanVibeRoastery
             // 
             this.pnBeans.BackgroundImage = global::UrbanVibeRoastery.Properties.Resources.beans;
             this.pnBeans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBeans.Controls.Add(this.Oderr);
             this.pnBeans.Controls.Add(this.lbEuro);
             this.pnBeans.Controls.Add(this.txtQty);
             this.pnBeans.Controls.Add(this.label3);
@@ -88,7 +90,7 @@ namespace UrbanVibeRoastery
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(170, 26);
             this.txtQty.TabIndex = 14;
-            this.txtQty.Text = "Qunatity";
+            this.txtQty.Text = "Quantity";
             this.txtQty.Click += new System.EventHandler(this.txtQty_Click);
             // 
             // label3
@@ -234,6 +236,15 @@ namespace UrbanVibeRoastery
             this.lbClose.Text = "X";
             this.lbClose.Click += new System.EventHandler(this.lbClose_Click);
             // 
+            // Oderr
+            // 
+            this.Oderr.AutoSize = true;
+            this.Oderr.Location = new System.Drawing.Point(15, 20);
+            this.Oderr.Name = "Oderr";
+            this.Oderr.Size = new System.Drawing.Size(47, 13);
+            this.Oderr.TabIndex = 16;
+            this.Oderr.Text = "Order by";
+            // 
             // CustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,5 +286,6 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.DataGridView cart;
         private System.Windows.Forms.Button brnLogin;
         private System.Windows.Forms.Label lbEuro;
+        private System.Windows.Forms.Label Oderr;
     }
 }

@@ -78,5 +78,13 @@ namespace UrbanVibeRoastery
             AddProducts p1 = new AddProducts("Coffee", getNum(), "Kenya", 7.50m);
             p1.AddProduct();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UserOrder us = new UserOrder();
+            us.Show();
+
+        }
     }
 }

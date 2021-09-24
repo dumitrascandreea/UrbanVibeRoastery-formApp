@@ -55,17 +55,17 @@ namespace UrbanVibeRoastery
         }
 
         int number = 0;
-        int total, price;
+        decimal total, price;
         string name, category;
         DataTable tab = new DataTable();
-        int sum = 0;
+        decimal sum = 0;
 
         private void brnLogin_Click(object sender, EventArgs e)
         {
 
-            if (txtQty.Text == "")
+            if (txtQty.Text == "Quantity" || txtOrderNumber.Text =="OrderNumber" ||cbCategory.Text=="Category")
             {
-                MessageBox.Show("Introduce the quantity!");
+                MessageBox.Show("Introduce quantity, order number and category!");
             }
             else if (name == "0" || name == null)
             {
@@ -74,7 +74,7 @@ namespace UrbanVibeRoastery
             else
             {
                 number = number + 1;
-                total = price * Convert.ToInt32(txtQty.Text);
+                total = price * Convert.ToDecimal(txtQty.Text);
                 tab.Rows.Add(number, name, category, price, total);
                 cart.DataSource = tab;
             }
@@ -85,16 +85,23 @@ namespace UrbanVibeRoastery
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
-            string query = "insert into dbo.Orders  values ('" + txtOrderNumber .Text + "','" + txtGuest.Text + "','" + txtQty.Text + "','"+lbTotal.Text +  "','"+cbCategory.SelectedItem.ToString()+ "') ";
+            if (txtOrderNumber.Text == "OrderNumber" || txtQty.Text == "Quantity" ||cbCategory.Text=="Category")
+            {
+                Console.WriteLine("Please enter order number , quantity and cateory!");
+            }
+            else
+            {
+                con.Open();
+                string query = "insert into Orders  values ('" + txtOrderNumber.Text + "','" + txtGuest.Text + "','" + txtQty.Text + "','" + lbTotal.Text + "','" + cbCategory.SelectedItem.ToString() + "') ";
 
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Connection = con;
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Order succesfuly made");
-            con.Close();
-            txtOrderNumber.Text = "";
-            txtQty.Text = "";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Connection = con;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Order succesfuly made");
+                con.Close();
+                txtOrderNumber.Text = "";
+                txtQty.Text = "";
+            }
             
         }
 
@@ -112,7 +119,7 @@ namespace UrbanVibeRoastery
         {
             name = ProductsView.SelectedRows[0].Cells[2].Value.ToString();
             category = ProductsView.SelectedRows[0].Cells[0].Value.ToString();
-            price = Convert.ToInt32(ProductsView.SelectedRows[0].Cells[3].Value.ToString());
+            price = Convert.ToDecimal(ProductsView.SelectedRows[0].Cells[3].Value.ToString());
         }
 
 

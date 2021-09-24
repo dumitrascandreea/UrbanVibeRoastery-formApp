@@ -87,7 +87,7 @@ namespace UrbanVibeRoastery
             else
             {
                 con.Open();
-                string query = "delete from UserLogin where Phone = '" + txtPhone.Text + "'";
+                string query = "delete from UserLogin where Phone = '" + txtPhone.Text + "'";// +"'and UserName = '" + txtUserName.Text + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User successfully deleted!");
@@ -104,7 +104,11 @@ namespace UrbanVibeRoastery
             }else
             {
                 con.Open();
-                string query = "Update UserLogin set UserName = '" + txtUserName.Text + "' , Phone = '" + txtPhone.Text + "'where Password =  '" + txtPassword.Text + "'";
+                string query = "Update UserLogin set UserName = '" + txtUserName.Text + "' , Phone = '" + txtPhone.Text  +"',Password ='"+txtPassword.Text+  "' where Password =  '" + txtPassword.Text +  "'";
+
+                //string query = "Update Product set ProductName = '" + txtItemName.Text + "' , Price = '" + txtPrice.Text + "',Category = '" + cbCategory.SelectedItem.ToString() +
+                //   "'where Number =  '" + txtNumber.Text + "'";
+
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("successfull updated!");

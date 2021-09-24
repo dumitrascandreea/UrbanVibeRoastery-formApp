@@ -54,6 +54,8 @@ namespace UrbanVibeRoastery
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -306,19 +308,44 @@ namespace UrbanVibeRoastery
             // 
             // button9
             // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.button9.Location = new System.Drawing.Point(0, 413);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(202, 23);
             this.button9.TabIndex = 25;
-            this.button9.Text = "View products";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Text = "Edit products";
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button10.Location = new System.Drawing.Point(208, 413);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(202, 23);
+            this.button10.TabIndex = 26;
+            this.button10.Text = "Back";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(352, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(134, 18);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "Add products to list";
             // 
             // CoffeeSepciality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 458);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -379,5 +406,7 @@ namespace UrbanVibeRoastery
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label17;
     }
 }
